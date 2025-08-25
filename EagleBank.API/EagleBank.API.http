@@ -1,0 +1,6 @@
+@EagleBank.API_HostAddress = http://localhost:5188
+
+GET {{EagleBank.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
