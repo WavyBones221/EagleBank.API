@@ -22,6 +22,7 @@ public class TransactionsController : ControllerBase
         int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 
     [HttpPost]
+    [Authorize]
     public async Task<IActionResult> CreateTransaction(int accountId, [FromBody] CreateTransactionDto dto)
     {
         try

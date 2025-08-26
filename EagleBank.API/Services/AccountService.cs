@@ -44,7 +44,7 @@ public class AccountService : IAccountService
             {
                 Id = a.Id,
                 AccountNumber = a.AccountNumber,
-                AccountName = "Account",  // could be extended with a field later
+                AccountName = "Account", 
                 Balance = a.Balance
             })
             .ToListAsync();
@@ -73,7 +73,6 @@ public class AccountService : IAccountService
         if (account == null || account.UserId != userId)
             return null;
 
-        // Currently only updating AccountName, but could extend this
         var updated = new AccountResponseDto
         {
             Id = account.Id,
@@ -94,7 +93,6 @@ public class AccountService : IAccountService
         if (account == null || account.UserId != userId)
             return false;
 
-        // Example rule: Don’t delete if transactions exist
         if (account.Transactions.Any())
             throw new InvalidOperationException("Cannot delete account with transactions.");
 
